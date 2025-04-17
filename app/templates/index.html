@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App</title>
+    <style>
+            
+    </style>
+</head>
+<body>
+    <h1>Flask Task App</h1>
+    <p>Welcome to the Task App!</p>
+    
+    <ul style="list-style-type: none; color: blueviolet; font-weight: bolder;"> 
+        {% for user in users %}
+            <li  >{{ user }}</li>
+
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
