@@ -3,10 +3,15 @@
 
 <form action="" method="post">
     <div class="container">
-  {{ form.username.label (size=50 , class="form-control w-50") }} <label for="username"></label>
-  {{ form.firstname.label (size=50 , class="form-control w-50") }} <label for="firstname"></label>
-  {{ form.lastname.label (size=50 , class="form-control w-50") }} <label for="lastname"></label>
-  {{ form.password.label (size=100 , class="form-control w-50") }} <label for="password"></label>
+        {{ form.csrf_token() }}
+  {{ form.username.label(size=50 , class="form-control w-50") }} 
+  {{ form.username}}
+  {{ form.firstname.label(size=50 , class="form-control w-50") }} 
+  {{ form.firstname}}
+  {{ form.lastname.label(size=50 , class="form-control w-50") }} 
+  {{ form.lastname }}
+  {{ form.password.label(size=100 , class="form-control w-50") }} 
+  {{ form.password}}
   {{ form.submit }} 
 </div>
 </form>
