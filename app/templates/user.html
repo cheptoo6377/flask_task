@@ -1,13 +1,24 @@
 {% extends "base.html" %} {% block content %}
 <h1>Users</h1>
-<ul class="container">
+
+<form action="" method="post">
+    <div class="container">
+  {{ form.username.label (size=50 , class="form-control w-50") }} <label for="username"></label>
+  {{ form.firstname.label (size=50 , class="form-control w-50") }} <label for="firstname"></label>
+  {{ form.lastname.label (size=50 , class="form-control w-50") }} <label for="lastname"></label>
+  {{ form.password.label (size=100 , class="form-control w-50") }} <label for="password"></label>
+  {{ form.submit }} 
+</div>
+</form>
+
+<!-- <ul class="container">
     {% for user in users %}
         <li style="list-style-type: symbols();" class="text-success bg-light">
             <a href="{{ url_for('tasks', user=user) }}">{{ user }}</a>
            
          
         {{ user}}
-        </li>
-    {% endfor %}
-</ul>
+        </li> -->
+    <!-- {% endfor %}
+</ul> -->
 {% endblock %}

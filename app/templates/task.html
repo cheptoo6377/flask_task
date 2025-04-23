@@ -1,8 +1,23 @@
 {% extends "base.html" %} {% block content %}
 
 <h1> Task App</h1>
+<form action="" method="post" >
 
-<table class="table">
+  <div class="container">
+  {{ form.title.label(class="form-label") }}
+  {{ form.title(size=100,class="form-control w-50" ) }}
+
+  {{ form.description.label(size=100,class="form-control w-50" ) }}
+
+  {{ form.completed.label }} <input type="checkbox" name="completed" id="completed">
+
+  {{ form.submit }} <input type="button" value="submit">
+</div>
+  
+</form>
+
+
+<!-- <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -12,8 +27,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
+      <tr> -->
+        <!-- <th scope="row">1</th>
         <td><a href="{{ url_for('tasks', user=user) }}">{{ user1 }}</a></td>
         <td></td>
         <td></td>
@@ -31,6 +46,6 @@
         <td></td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 
 {% endblock %}
