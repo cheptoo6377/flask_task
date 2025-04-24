@@ -48,4 +48,17 @@ def toggle_task(task_id):
     return redirect(url_for('home'))
     
     
-         
+@app.route('/delete_task/<int:task_id>',methods=['POST'])
+def delete_task(task_id):
+    task = Task.query.get_or_404(task_id)
+    db.session.delete(task)
+    db.session.commit()
+    flash(f'Task {task.title} deleted successfully', 'success')
+    return redirect(url_for('home'))
+@app.route('/delete_user/<int:user_id>',methods=['POST'])
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    db.session.delete(user)
+    db.session.commit()
+    flash(f'User {user.username} deleted successfully', 'success')
+    return redirect(url_for('home'))
