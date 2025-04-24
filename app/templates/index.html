@@ -10,8 +10,28 @@
         {{ user}}
         </li>
  {% endfor %}
-</ul>
+    </ul>
+<h2>tasks</h2>
+    <ul>
+        {% for task in tasks|reverse %}
+            <li style="list-style-type: symbols();" class="text-success bg-light">
+              
+                <div>
+                    <form action="{{ url_for( 'toggle_task' , task_id=task.id)}}" method="post" style="display: inline;">
+                        <input type="checkbox" name="completed" id="task-{{ task.id }}" onchange="this.form.submit()" {% if task.completed %}checked{% endif %}>
+                        
+                        
+                    </form>
+                    <p>{{ task.title }}</p>
 
+             <p>{{ task.description }}</p>
+             
+
+             <p>Assigned to: {{ task.user_id }}</p>
+             </div>
+            </li>
+        {% endfor %}
+    </ul>
 
 
 {% endblock %}

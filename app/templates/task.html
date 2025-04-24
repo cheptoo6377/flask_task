@@ -4,48 +4,32 @@
 <form action="" method="post" >
 
   <div class="container">
+    {{ form.csrf_token() }}
   {{ form.title.label(class="form-label") }}
   {{ form.title(size=100,class="form-control w-50" ) }}
 
+  
   {{ form.description.label(size=100,class="form-control w-50" ) }}
+  {{ form.description}}
 
-  {{ form.completed.label }} <input type="checkbox" name="completed" id="completed">
+  
 
-  {{ form.submit }} <input type="button" value="submit">
+  
+  {{ form.completed.label(class="form-label") }}
+  {{ form.completed }} 
+  
+
+  {{ form.submit }} 
+ 
+  
+ 
 </div>
   
 </form>
 
 
-<!-- <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">user</th>
-        <th scope="col">task</th>
-        <th scope="col">completed / not</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr> -->
-        <!-- <th scope="row">1</th>
-        <td><a href="{{ url_for('tasks', user=user) }}">{{ user1 }}</a></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td><a href="{{ url_for('tasks', user=user2) }}">{{ user2 }}</a></td>
--        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2"></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table> -->
+
+  
+  
 
 {% endblock %}
